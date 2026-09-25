@@ -5,6 +5,9 @@ import NagyKep from "./component/NagyKep";
 
 function App() {
   const elsoKep = keplista[0];
+  function kattintas(index:number) {
+    console.log(index);
+  }
 
   return (
     <div className="galeria-container">
@@ -16,8 +19,8 @@ function App() {
         <NagyKep kep={elsoKep} />
 
         <section className="galeria">
-          {keplista.map((kep) => (
-            <KisKep key={kep.kep} kep={kep} />
+          {keplista.map((kep,i) => (
+            <KisKep key={kep.kep} kep={kep} kattintas={kattintas} index={i}/>
           ))}
         </section>
       </main>

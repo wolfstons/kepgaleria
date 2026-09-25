@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111827;
+  color: #f3f4f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.galeria-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+}
+
+.galeria-olvasat {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nagy-kep-panel {
+  background: #1f2937;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.nagy-kep-panel img {
+  display: block;
+  width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+
+.kep-leiras {
+  margin: 16px 0 0;
+  text-align: center;
+  color: #d1d5db;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.kep-kartya {
+  display: block;
+  width: 100%;
+  background: #1f2937;
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+  color: #f3f4f6;
+  text-align: left;
+}
+
+.kep-kartya img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.kep-kartya span {
+  display: block;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 700px) {
+  .galeria {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 500px) {
+  .galeria {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,3 @@
+# Képgaléria
+
+readme értelmes jegyzet

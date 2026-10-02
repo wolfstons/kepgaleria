@@ -77,6 +77,19 @@ h1 {
   padding: 12px 14px;
   font-size: 0.95rem;
 }
+.jobb-gomb, .bal-gomb {
+  
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #f3f4f6;
+  font-size: 1.5rem;
+  padding: 10px;
+  cursor: pointer;
+}
+.jobb-gomb {
+ transform: scalex(-1);
+ 
+}
 
 @media (max-width: 700px) {
   .galeria {

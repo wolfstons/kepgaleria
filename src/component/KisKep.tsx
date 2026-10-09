@@ -1,12 +1,14 @@
+import { useKepContext } from "../contexts/KepContext";
 import type { KepTipus } from "./adatok";
+
 
 interface KisKepProps {
   kep: KepTipus;
-  kattintas:(index:number)=>void;
   index:number;
 }
 
-export function KisKep({ kep, kattintas, index }: KisKepProps) {
+export function KisKep({ kep, index }: KisKepProps) {
+  const { kattintas } = useKepContext();
   return (
     <div className="kep-kartya" onClick={() => kattintas(index)}>
       <img src={kep.kep} alt={kep.leiras} />

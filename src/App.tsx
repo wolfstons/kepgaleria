@@ -1,32 +1,11 @@
-import { useState } from "react";
 import "./App.css";
-import { keplista } from "./component/adatok";
 import { KisKep } from "./component/KisKep";
 import NagyKep from "./component/NagyKep";
+import { useKepContext } from "./contexts/KepContext";
 
 
-function App() {
-  const [i, setI] = useState(0);
-  
-  function kattintas(index:number) {
-    console.log(index);
-    setI(index);
-  }
-  function elolre() {
-    if(i < keplista.length - 1) {
-      setI(i+1);
-    }else{
-      setI(0);
-    }
-  }
-  function hatra() {
-    if(i > 0) {
-      setI(i-1);
-    }else {
-      setI(keplista.length - 1 );
-
-    }
-  }
+function App() { 
+  const { keplista, i } = useKepContext();
   return (
     <div className="galeria-container">
       <header>
@@ -34,11 +13,11 @@ function App() {
       </header>
 
       <main className="galeria-olvasat">
-        <NagyKep kep={keplista[i]} elolre={elolre} hatra={hatra} />
+        <NagyKep kep={keplista[i]} />
 
         <section className="galeria">
           {keplista.map((kep,i) => (
-            <KisKep key={i} kep={kep} kattintas={kattintas} index={i}/>
+            <KisKep key={i} kep={kep} index={i}/>
           ))}
         </section>
       </main>

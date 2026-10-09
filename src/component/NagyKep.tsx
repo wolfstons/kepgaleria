@@ -1,13 +1,14 @@
+import { useKepContext } from "../contexts/KepContext";
 import type { KepTipus } from "./adatok";
 
 interface NagyKepProps {
   kep: KepTipus,
-  elolre: () => void;
-  hatra: () => void;
+  
 
 }
 
-export default function NagyKep({ kep,elolre,hatra }: NagyKepProps) {
+export default function NagyKep({ kep }: NagyKepProps) {
+  const { elolre, hatra } = useKepContext();
   return (
     <div className="nagy-kep-panel">
       <button className="bal-gomb" onClick={() => hatra()}>{"🐈"}</button>
